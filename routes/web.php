@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
+use Illuminate\Contracts\Session\Session;
+use Illuminate\Support\Facades\Session as FacadesSession;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,7 +21,7 @@ Route::get('/login', function () {
     return view('login');
 });
 Route::get('/logout', function () {
-    Session::forget('user');
+    FacadesSession::forget('user');
     return view('login');
 });
 
